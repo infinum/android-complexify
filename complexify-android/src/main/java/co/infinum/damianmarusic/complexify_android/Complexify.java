@@ -291,26 +291,22 @@ public class Complexify {
 	}
 
 	private boolean isInBanList(String password) {
+		String passwordLowerCase = password.toLowerCase();
 		if (banMode == ComplexifyBanMode.STRICT) {
-			for (int i = 1; i <= password.length(); i++) {
-				String subString = password.substring(0, i);
-				if (banListContains(subString)) {
+			for (String s : BAN_LIST) {
+				if (passwordLowerCase.contains(s)) { //BAN_LIST elements already in lower case
 					return true;
 				}
 			}
 			return false;
 		} else {
-			return banListContains(password);
-		}
-	}
-
-	private boolean banListContains(String string) {
-		for (String s : BAN_LIST) {
-			if (s.equals(string)) {
-				return true;
+			for (String s : BAN_LIST) {
+				if (s.equals(passwordLowerCase)) { //BAN_LIST elements already in lower case
+					return true;
+				}
 			}
+			return false;
 		}
-		return false;
 	}
 
 	public ComplexifyBanMode getBanMode() {
