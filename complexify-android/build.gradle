@@ -21,3 +21,33 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'complexify-android'   // Has to be same as your library module name
+
+    publishedGroupId = 'co.infinum'
+    libraryName = 'Complexify-android'
+    artifact = 'complexify-android'     // Has to be same as your library module name
+
+    libraryDescription = 'Android port of Dan Palmer\'s jquery.complexify.js'
+
+    // Your github repo link
+    siteUrl = 'https://github.com/infinum/android-complexify'
+    gitUrl = 'https://github.com/infinum/android-complexify.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'dmarusic35'
+    developerName = 'Damian Marusic'
+    developerEmail = 'damian.marusic@infinum.hr'
+
+    licenseName = 'WTFPL v2 licence'
+    licenseUrl = 'http://www.wtfpl.net/txt/copying/'
+    allLicenses = ["WTFPL"]
+}
+
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
