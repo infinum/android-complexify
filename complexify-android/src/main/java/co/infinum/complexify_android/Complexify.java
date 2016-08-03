@@ -133,6 +133,9 @@ public class Complexify {
      * executeMode - ComplexifyExecuteMode.SYNC
      * strengthScaleFactor - 1
      * minimumChars - 8
+     *
+     * @param editText            EditText for which text complexity will be calculated
+     * @param listener            ComplexifyListener which is triggered on every text change, after complexity is calculated
      */
     public Complexify(EditText editText, ComplexifyListener listener) {
         this(editText, listener, ComplexifyBanMode.STRICT, ComplexifyExecuteMode.SYNC, 1, 8);
