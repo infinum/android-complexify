@@ -1,4 +1,4 @@
-package co.infinum.damianmarusic.complexify_android;
+package co.infinum.complexify_android;
 
 import android.text.Editable;
 import android.text.TextWatcher;

@@ -1,4 +1,4 @@
-package co.infinum.damianmarusic.complexify_android;
+package co.infinum.complexify_android;
 
 /**
  * Enum for execution mode.

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "co.infinum.complexify"
+        applicationId "co.infinum.complexify_android"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1

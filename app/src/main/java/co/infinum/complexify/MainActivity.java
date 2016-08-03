@@ -7,8 +7,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import co.infinum.damianmarusic.complexify_android.Complexify;
-import co.infinum.damianmarusic.complexify_android.ComplexifyListener;
+import co.infinum.complexify_android.Complexify;
+import co.infinum.complexify_android.ComplexifyListener;
 
 
 
