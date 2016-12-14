@@ -1,18 +1,13 @@
 package co.infinum.complexify;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import co.infinum.complexify_android.Complexify;
-import co.infinum.complexify_android.ComplexifyListener;
 
-
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,36 +17,21 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void init() {
-        EditText e = (EditText) findViewById(R.id.editText);
-        final TextView t = (TextView) findViewById(R.id.textView);
+        EditText input = (EditText) findViewById(R.id.editText);
+        final TextView tvComplexity = (TextView) findViewById(R.id.tvComplexity);
+        final TextView tvValid = (TextView) findViewById(R.id.tvValid);
 
-        Complexify c = new Complexify(e, new ComplexifyListener() {
+        Complexify c = new Complexify(input, new ComplexityListener() {
             @Override
             public void onSuccess(boolean isValid, double complexity) {
-                t.setText(String.valueOf(complexity));
+                tvComplexity.setText(String.valueOf(complexity));
+
+                if (isValid) {
+                    tvValid.setText(getString(R.string.valid));
+                } else {
+                    tvValid.setText(getString(R.string.non_valid));
+                }
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
