@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
     }
     buildTypes {
         release {
@@ -20,6 +20,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'co.infinum:complexify-java:1.0.1'
 }
 
 ext {
@@ -37,7 +38,7 @@ ext {
     siteUrl = 'https://github.com/infinum/android-complexify'
     gitUrl = 'https://github.com/infinum/android-complexify.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '2.0.0'
 
     developerId = 'dmarusic35'
     developerName = 'Damian Marusic'

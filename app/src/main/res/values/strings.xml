@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="valid">Valid</string>
+    <string name="non_valid">Non valid</string>
 </resources>
