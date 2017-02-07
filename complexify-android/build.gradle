@@ -38,7 +38,7 @@ ext {
     siteUrl = 'https://github.com/infinum/android-complexify'
     gitUrl = 'https://github.com/infinum/android-complexify.git'
 
-    libraryVersion = '2.0.0'
+    libraryVersion = '2.0.1'
 
     developerId = 'dmarusic35'
     developerName = 'Damian Marusic'
