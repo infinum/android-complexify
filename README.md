@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  compile 'co.infinum:complexify-android:2.0.0'
+  compile 'co.infinum:complexify-android:2.0.1'
 }
 ```
 
