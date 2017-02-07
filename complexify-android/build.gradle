@@ -20,7 +20,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'co.infinum:complexify-java:1.0.1'
+    compile 'co.infinum:complexify-java:1.0.2'
 }
 
 ext {
