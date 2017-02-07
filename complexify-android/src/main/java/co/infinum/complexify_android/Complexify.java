@@ -112,4 +112,12 @@ public class Complexify {
     public void setBanList(String[] banList) {
         javaComplexify.setBanList(banList);
     }
+
+    public boolean shouldUseBanList() {
+        return javaComplexify.shouldUseBanList();
+    }
+
+    public void setShouldUseBanList(boolean shouldUseBanList) {
+        javaComplexify.setShouldUseBanList(shouldUseBanList);
+    }
 }
