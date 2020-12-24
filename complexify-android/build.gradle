@@ -19,7 +19,6 @@ android {
 }
 
 dependencies {
-    api packages.complexify_java
     api packages.kotlin.core
 }
 
