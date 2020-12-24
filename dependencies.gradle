@@ -1,5 +1,4 @@
 ext.complexify = [
-    "group"      : "co.infinum.complexify_android",
     "minSdk"     : 21,
     "compileSdk" : 30,
     "targetSdk"  : 30,
