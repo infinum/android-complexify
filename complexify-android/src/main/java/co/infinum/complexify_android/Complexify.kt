@@ -21,8 +21,8 @@ import co.infinum.complexify.ComplexityListener
  */
 class Complexify @JvmOverloads constructor(
     editText: EditText,
-    listener: ComplexityListener?,
-    banMode: ComplexifyBanMode? = ComplexifyBanMode.STRICT,
+    listener: ComplexityListener,
+    banMode: ComplexifyBanMode = ComplexifyBanMode.STRICT,
     var executeMode: ComplexifyExecuteMode = ComplexifyExecuteMode.SYNC,
     strengthScaleFactor: Int = 1,
     minimumChars: Int = 8
@@ -51,7 +51,7 @@ class Complexify @JvmOverloads constructor(
             javaComplexify.banList = banList
         }
 
-    var banMode: ComplexifyBanMode?
+    var banMode: ComplexifyBanMode
         get() = javaComplexify.banMode
         set(banMode) {
             javaComplexify.banMode = banMode
@@ -64,9 +64,9 @@ class Complexify @JvmOverloads constructor(
         }
 
     var shouldUseBanList: Boolean
-        get() = javaComplexify.shouldUseBanList()
+        get() = javaComplexify.shouldUseBanList
         set(shouldUseBanList) {
-            javaComplexify.setShouldUseBanList(shouldUseBanList)
+            javaComplexify.shouldUseBanList = shouldUseBanList
         }
 
     var strengthScaleFactor: Int

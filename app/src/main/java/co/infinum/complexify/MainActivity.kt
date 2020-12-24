@@ -20,15 +20,17 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         Complexify(
             input,
-            { isValid, complexity ->
-                tvComplexity.text = complexity.toString()
-                tvValid.text = getString(
-                    if (isValid) {
-                        R.string.valid
-                    } else {
-                        R.string.non_valid
-                    }
-                )
+            object : ComplexityListener {
+                override fun onSuccess(isValid: Boolean, complexity: Double) {
+                    tvComplexity.text = complexity.toString()
+                    tvValid.text = getString(
+                        if (isValid) {
+                            R.string.valid
+                        } else {
+                            R.string.non_valid
+                        }
+                    )
+                }
             }
         )
     }
