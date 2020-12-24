@@ -6,15 +6,15 @@ import kotlin.math.ln
 /**
  * Class for calculation of password complexity.
  *
- * @param banMode             Use strict or loose comparisons for banned passwords. (default: ComplexifyBanMode.STRICT)
- * @param strengthScaleFactor Required password strength multiplier (default: 1)
- * @param minimumChars        Minimum password length (default: 8)
- * @param shouldUseBanList    Whether a list of banned passwords should be used when calcualting the password's complexity.
+ * @param banMode             Use strict or loose comparisons for banned passwords.
+ * @param strengthScaleFactor Required password strength multiplier. Bigger factor = more complex password required.
+ * @param minimumChars        Minimum password length.
+ * @param shouldUseBanList    Whether a list of banned passwords should be used when calculating the password's complexity.
  * @param banList             A list of banned passwords which will reduce input password's complexity to 0 if the password contains one of them. The default values are generated from 500 worst passwords and 370 Banned Twitter lists: https://wiki.skullsecurity.org/Passwords
  */
 class Complexify @JvmOverloads constructor(
     var banMode: ComplexifyBanMode = ComplexifyBanMode.STRICT,
-    var strengthScaleFactor: Int = 1,
+    var strengthScaleFactor: Double = 1.0,
     var minimumChars: Int = 8,
     var shouldUseBanList: Boolean = true,
     var banList: Array<String> = arrayOf("0", "1111", "1212", "1234", "1313", "2000", "2112", "2222", "3333",
