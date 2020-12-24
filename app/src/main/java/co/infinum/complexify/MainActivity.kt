@@ -1,29 +1,32 @@
 package co.infinum.complexify
 
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import co.infinum.complexify_android.Complexify
+import co.infinum.complexify.databinding.ActivityMainBinding
+import co.infinum.complexify.ui.setComplexityListener
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         init()
     }
 
     private fun init() {
-        val input = findViewById<EditText>(R.id.editText)
-        val tvComplexity = findViewById<TextView>(R.id.tvComplexity)
-        val tvValid = findViewById<TextView>(R.id.tvValid)
-
-        Complexify(
-            input,
+        binding.editText.setComplexityListener(
+            Complexify(
+                ComplexifyBanMode.LOOSE,
+                0.5,
+                6
+            ),
             object : ComplexityListener {
                 override fun onSuccess(isValid: Boolean, complexity: Double) {
-                    tvComplexity.text = complexity.toString()
-                    tvValid.text = getString(
+                    binding.tvComplexity.text = complexity.toString()
+                    binding.tvValid.text = getString(
                         if (isValid) {
                             R.string.valid
                         } else {
