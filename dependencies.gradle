@@ -11,15 +11,20 @@ ext.versions = [
     "bintray"        : "1.8.5",
     "complexify_java": "1.0.2",
     "gradle"         : "4.1.1",
+    "kotlin"         : "1.4.21",
     "maven"          : "1.5"
 ]
 
 ext.packages = [
     "androidx"       : [
-        "appcompat" : "androidx.appcompat:appcompat:${versions.appcompat}"
+        "appcompat": "androidx.appcompat:appcompat:${versions.appcompat}"
     ],
     "bintray"        : "com.jfrog.bintray.gradle:gradle-bintray-plugin:${versions.bintray}",
     "complexify_java": "co.infinum:complexify-java:${versions.complexify_java}",
     "gradle"         : "com.android.tools.build:gradle:${versions.gradle}",
+    "kotlin"         : [
+        "core"  : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+        "plugin": "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    ],
     "maven"          : "com.github.dcendents:android-maven-gradle-plugin:${versions.maven}"
 ]

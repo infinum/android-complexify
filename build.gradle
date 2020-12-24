@@ -1,5 +1,4 @@
 buildscript {
-
     ext.buildConfig = [
         "minSdk"    : 21,
         "compileSdk": 30,
@@ -13,16 +12,17 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath packages.gradle
-
         classpath packages.bintray
+        classpath packages.gradle
+        classpath packages.kotlin.plugin
         classpath packages.maven
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        jcenter()
+        mavenCentral()
     }
 }
