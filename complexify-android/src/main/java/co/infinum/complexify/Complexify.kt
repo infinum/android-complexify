@@ -33,7 +33,7 @@ class Complexify @JvmOverloads constructor(
      * @param password The password to check
      * @param listener Callback
      */
-    fun checkComplexityOfPassword(password: String, listener: ComplexityListener) {
+    fun checkPasswordComplexity(password: String, listener: ComplexityListener) {
         var base = 0.0
         if (banList.isNotEmpty() && isInBanList(password)) {
             base = 1.0
@@ -62,8 +62,8 @@ class Complexify @JvmOverloads constructor(
      * @param password The password to check
      * @param listener Callback
      */
-    fun checkComplexityOfPasswordAsync(password: String, listener: ComplexityListener) {
-        Thread { checkComplexityOfPassword(password, listener) }.start()
+    fun checkPasswordComplexityAsync(password: String, listener: ComplexityListener) {
+        Thread { checkPasswordComplexity(password, listener) }.start()
     }
 
     private fun additionalComplexityForString(string: String, charset: IntArray): Int {

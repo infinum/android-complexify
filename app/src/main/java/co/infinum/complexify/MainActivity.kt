@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
 
             override fun afterTextChanged(s: Editable?) {
-                complexify.checkComplexityOfPassword(s.toString(), listener)
+                complexify.checkPasswordComplexity(s.toString(), listener)
             }
         })
     }

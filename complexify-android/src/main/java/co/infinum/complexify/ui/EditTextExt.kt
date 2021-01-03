@@ -14,7 +14,7 @@ fun EditText.setComplexityListener(complexify: Complexify, complexityListener: C
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
 
             override fun afterTextChanged(s: Editable?) {
-                complexify.checkComplexityOfPassword(s.toString(), complexityListener)
+                complexify.checkPasswordComplexity(s.toString(), complexityListener)
             }
         }
     )

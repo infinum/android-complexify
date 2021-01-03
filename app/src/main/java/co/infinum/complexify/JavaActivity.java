@@ -55,7 +55,7 @@ class JavaActivity extends AppCompatActivity {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-                    complexify.checkComplexityOfPassword(s.toString(), listener);
+                    complexify.checkPasswordComplexity(s.toString(), listener);
                 }
             }
         );
