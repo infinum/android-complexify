@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion buildConfig.minSdk
         targetSdkVersion buildConfig.targetSdk
-        versionCode complexify.versionCode
-        versionName complexify.versionName
+        versionCode releaseConfig.versionCode
+        versionName releaseConfig.versionName
     }
     buildTypes {
         release {
@@ -21,5 +21,3 @@ android {
 dependencies {
     api packages.kotlin.core
 }
-
-apply from: "bintray.gradle"

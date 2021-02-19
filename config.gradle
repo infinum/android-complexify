@@ -1,0 +1,12 @@
+ext {
+    buildConfig = [
+        "minSdk"     : 21,
+        "compileSdk" : 30,
+        "targetSdk"  : 30
+    ]
+    releaseConfig = [
+        "group"      : "com.infinum.complexify",
+        "versionName": "3.0.0",
+        "versionCode": 3 * 100 * 100 + 0 * 100 + 0
+    ]
+}
