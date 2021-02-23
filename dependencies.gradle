@@ -1,8 +1,7 @@
 ext.versions = [
     "appcompat"      : "1.2.0",
-    "gradle"         : "4.1.1",
-    "kotlin"         : "1.4.21",
-    "maven"          : "1.5"
+    "gradle"         : "4.1.2",
+    "kotlin"         : "1.4.30"
 ]
 
 ext.packages = [
@@ -13,6 +12,5 @@ ext.packages = [
     "kotlin"         : [
         "core"  : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
         "plugin": "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
-    ],
-    "maven"          : "com.github.dcendents:android-maven-gradle-plugin:${versions.maven}"
+    ]
 ]

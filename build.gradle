@@ -10,14 +10,13 @@ buildscript {
     dependencies {
         classpath packages.gradle
         classpath packages.kotlin.plugin
-        classpath packages.maven
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        jcenter()
     }
 }
