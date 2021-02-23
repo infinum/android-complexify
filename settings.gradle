@@ -1,1 +1,1 @@
-include ':app', ':complexify-core', ':complexify-android'
+include ':sample', ':complexify-core', ':complexify-android'
