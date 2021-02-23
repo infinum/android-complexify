@@ -76,20 +76,23 @@ class Complexify @JvmOverloads constructor(
     }
 
     private fun isInBanList(password: String): Boolean {
-        return if (banMode === ComplexifyBanMode.STRICT) {
-            banList.forEach {
-                if (password.contains(it, true)) {
-                    return true
+        return when (banMode) {
+            ComplexifyBanMode.STRICT -> {
+                banList.forEach {
+                    if (password.contains(it, true)) {
+                        return true
+                    }
                 }
+                false
             }
-            false
-        } else {
-            banList.forEach {
-                if (password.equals(it, true)) {
-                    return true
+            ComplexifyBanMode.LOOSE -> {
+                banList.forEach {
+                    if (password.equals(it, true)) {
+                        return true
+                    }
                 }
+                false
             }
-            false
         }
     }
 }
