@@ -3,7 +3,7 @@ package com.infinum.complexify
 /**
  * Password complexity calculation listener
  */
-interface ComplexityListener {
+fun interface ComplexityListener {
 
     /**
      * Called when the password complexity calculation is done.

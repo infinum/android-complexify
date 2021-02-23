@@ -18,17 +18,15 @@ class MainActivity : AppCompatActivity() {
         arrayOf("123", "password")
     )
 
-    private val listener = object : ComplexityListener {
-        override fun onSuccess(isValid: Boolean, complexity: Double) {
-            binding.complexityLabel.text = complexity.toString()
-            binding.validityLabel.text = getString(
-                if (isValid) {
-                    R.string.valid
-                } else {
-                    R.string.non_valid
-                }
-            )
-        }
+    private val listener = ComplexityListener { isValid, complexity ->
+        binding.complexityLabel.text = complexity.toString()
+        binding.validityLabel.text = getString(
+            if (isValid) {
+                R.string.valid
+            } else {
+                R.string.non_valid
+            }
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
