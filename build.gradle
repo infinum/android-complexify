@@ -8,7 +8,6 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath packages.bintray
         classpath packages.gradle
         classpath packages.kotlin.plugin
         classpath packages.maven

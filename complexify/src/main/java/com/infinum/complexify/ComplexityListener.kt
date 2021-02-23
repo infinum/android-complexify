@@ -1,4 +1,4 @@
-package co.infinum.complexify
+package com.infinum.complexify
 
 /**
  * Password complexity calculation listener

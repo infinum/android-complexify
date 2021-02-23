@@ -1,11 +1,11 @@
-package co.infinum.complexify
+package com.infinum.complexify
 
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
-import co.infinum.complexify.databinding.ActivityMainBinding
-import co.infinum.complexify.ui.setComplexityListener
+import com.infinum.complexify.databinding.ActivityMainBinding
+import com.infinum.complexify.ui.setComplexityListener
 
 class MainActivity : AppCompatActivity() {
 

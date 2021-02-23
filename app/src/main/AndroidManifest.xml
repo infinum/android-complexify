@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="co.infinum.complexify">
+          package="com.infinum.complexify">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="co.infinum.complexify.MainActivity"
+            android:name="com.infinum.complexify.MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="co.infinum.complexify.JavaActivity" />
+        <activity android:name="com.infinum.complexify.JavaActivity" />
     </application>
 
 </manifest>

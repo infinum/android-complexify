@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation project(':complexify-android')
+    implementation project(':complexify')
     implementation packages.androidx.appcompat
     implementation packages.kotlin.core
 }

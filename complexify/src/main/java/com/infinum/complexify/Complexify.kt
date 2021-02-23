@@ -1,7 +1,7 @@
-package co.infinum.complexify
+package com.infinum.complexify
 
-import co.infinum.complexify.Constants.CHARSETS_ARRAY
-import co.infinum.complexify.Constants.DEFAULT_BAN_LIST
+import com.infinum.complexify.Constants.CHARSETS_ARRAY
+import com.infinum.complexify.Constants.DEFAULT_BAN_LIST
 import kotlin.math.ln
 import kotlin.math.pow
 

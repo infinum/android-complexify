@@ -1,1 +1,1 @@
-include ':app', ':complexify-android'
+include ':app', ':complexify'

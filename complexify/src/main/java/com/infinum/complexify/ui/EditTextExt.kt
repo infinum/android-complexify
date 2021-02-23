@@ -1,10 +1,10 @@
-package co.infinum.complexify.ui
+package com.infinum.complexify.ui
 
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
-import co.infinum.complexify.Complexify
-import co.infinum.complexify.ComplexityListener
+import com.infinum.complexify.Complexify
+import com.infinum.complexify.ComplexityListener
 
 fun EditText.setComplexityListener(complexify: Complexify, complexityListener: ComplexityListener) {
     addTextChangedListener(
