@@ -4,17 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion buildConfig.compileSdk
 
     defaultConfig {
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+        versionCode releaseConfig.versionCode
+        versionName releaseConfig.versionName
     }
 
     buildTypes {
@@ -33,6 +29,5 @@ android {
 }
 
 dependencies {
-
     api project(':complexify-core')
 }
