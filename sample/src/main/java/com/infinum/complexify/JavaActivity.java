@@ -6,8 +6,9 @@ import android.text.TextWatcher;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.infinum.complexify.databinding.ActivityMainBinding;
-import com.infinum.complexify.ui.EditTextExtKt;
+import com.infinum.complexify.ui.EditTextKt;
 
 class JavaActivity extends AppCompatActivity {
 
@@ -37,7 +38,7 @@ class JavaActivity extends AppCompatActivity {
     }
 
     private void init() {
-        EditTextExtKt.setComplexityListener(binding.passwordInput, complexify, listener);
+        EditTextKt.setComplexityListener(binding.passwordInput, complexify, listener);
     }
 
     private void initManually() {
