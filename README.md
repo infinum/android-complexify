@@ -8,7 +8,7 @@ Use Gradle:
 
 ```gradle
 repositories {
-  jcenter()
+    mavenCentral()
 }
 
 dependencies {
