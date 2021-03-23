@@ -1,24 +1,22 @@
 package com.infinum.complexify
 
+import android.content.res.Resources
+import com.infinum.android.R
 import com.infinum.complexify.ComplexifyBanMode.*
 import com.infinum.complexify.Constants.CHARSETS_ARRAY
 import com.infinum.complexify.Constants.DEFAULT_BAN_LIST
+import com.infinum.complexify.configuration.Configuration
+import com.infinum.complexify.configuration.DefaultConfiguration
 import kotlin.math.ln
 import kotlin.math.pow
 
 /**
  * Class for calculation of password complexity.
  *
- * @param banMode             Use strict or loose comparisons for banned passwords.
- * @param strengthScaleFactor Required password strength multiplier. Bigger factor = more complex password required.
- * @param minimumChars        Minimum password length.
- * @param banList             A list of banned passwords which will reduce input password's complexity to 0 if the password contains one of them. The ban list is case-insensitive. The default values are generated from 500 worst passwords and 370 Banned Twitter lists: https://wiki.skullsecurity.org/Passwords
+ * @param configuration [Configuration] for password complexity calculation.
  */
 class Complexify @JvmOverloads constructor(
-    var banMode: ComplexifyBanMode = STRICT,
-    var strengthScaleFactor: Double = 1.0,
-    var minimumChars: Int = 8,
-    var banList: Array<String> = DEFAULT_BAN_LIST
+    private val configuration: Configuration = DefaultConfiguration()
 ) {
 
     companion object {
@@ -36,7 +34,7 @@ class Complexify @JvmOverloads constructor(
      */
     fun checkPasswordComplexity(password: String, listener: ComplexityListener) {
         var base = 0.0
-        if (banList.isNotEmpty() && isInBanList(password)) {
+        if (configuration.banList.isNotEmpty() && isInBanList(password)) {
             base = 1.0
         } else {
             // Add character complexity
@@ -45,11 +43,11 @@ class Complexify @JvmOverloads constructor(
             }
         }
 
-        val normalizedStrengthScaleFactor = 1.0 / strengthScaleFactor
+        val normalizedStrengthScaleFactor = 1.0 / configuration.strengthScaleFactor
         val complexity = ln(base.pow(password.length.toDouble())) // Use natural log to produce linear scale
 
         val scaledComplexity = complexity * normalizedStrengthScaleFactor
-        val isValid = scaledComplexity > MIN_COMPLEXITY && password.length >= minimumChars
+        val isValid = scaledComplexity > MIN_COMPLEXITY && password.length >= configuration.minimumChars
 
         // Scale to percentage, so it can be used for a progress bar
         val complexityPercentage = minOf(scaledComplexity / MAX_COMPLEXITY * MAX_PERCENTAGE, MAX_PERCENTAGE)
@@ -77,14 +75,14 @@ class Complexify @JvmOverloads constructor(
     }
 
     private fun isInBanList(password: String): Boolean {
-        return when (banMode) {
+        return when (configuration.banMode) {
             STRICT -> isInBanListStrict(password)
             LOOSE -> isInBanListLoose(password)
         }
     }
 
     private fun isInBanListStrict(password: String): Boolean {
-        banList.forEach {
+        configuration.banList.forEach {
             if (password.contains(it, true)) {
                 return true
             }
@@ -93,7 +91,7 @@ class Complexify @JvmOverloads constructor(
     }
 
     private fun isInBanListLoose(password: String): Boolean {
-        banList.forEach {
+        configuration.banList.forEach {
             if (password.equals(it, true)) {
                 return true
             }
