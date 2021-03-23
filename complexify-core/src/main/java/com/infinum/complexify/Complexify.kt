@@ -1,5 +1,6 @@
 package com.infinum.complexify
 
+import com.infinum.complexify.ComplexifyBanMode.*
 import com.infinum.complexify.Constants.CHARSETS_ARRAY
 import com.infinum.complexify.Constants.DEFAULT_BAN_LIST
 import kotlin.math.ln
@@ -14,7 +15,7 @@ import kotlin.math.pow
  * @param banList             A list of banned passwords which will reduce input password's complexity to 0 if the password contains one of them. The ban list is case-insensitive. The default values are generated from 500 worst passwords and 370 Banned Twitter lists: https://wiki.skullsecurity.org/Passwords
  */
 class Complexify @JvmOverloads constructor(
-    var banMode: ComplexifyBanMode = ComplexifyBanMode.STRICT,
+    var banMode: ComplexifyBanMode = STRICT,
     var strengthScaleFactor: Double = 1.0,
     var minimumChars: Int = 8,
     var banList: Array<String> = DEFAULT_BAN_LIST
@@ -77,22 +78,26 @@ class Complexify @JvmOverloads constructor(
 
     private fun isInBanList(password: String): Boolean {
         return when (banMode) {
-            ComplexifyBanMode.STRICT -> {
-                banList.forEach {
-                    if (password.contains(it, true)) {
-                        return true
-                    }
-                }
-                false
-            }
-            ComplexifyBanMode.LOOSE -> {
-                banList.forEach {
-                    if (password.equals(it, true)) {
-                        return true
-                    }
-                }
-                false
+            STRICT -> isInBanListStrict(password)
+            LOOSE -> isInBanListLoose(password)
+        }
+    }
+
+    private fun isInBanListStrict(password: String): Boolean {
+        banList.forEach {
+            if (password.contains(it, true)) {
+                return true
             }
         }
+        return false
+    }
+
+    private fun isInBanListLoose(password: String): Boolean {
+        banList.forEach {
+            if (password.equals(it, true)) {
+                return true
+            }
+        }
+        return false
     }
 }
