@@ -1,22 +1,24 @@
 package com.infinum.complexify.configuration
 
+import com.infinum.complexify.Complexify
 import com.infinum.complexify.ComplexifyBanMode
 import com.infinum.complexify.Constants.DEFAULT_BAN_LIST
 
 interface Configuration {
 
     /**
-     * Use strict or loose comparisons for banned passwords.
+     * Which [ComplexifyBanMode] to use when using the [banList].
      */
     var banMode: ComplexifyBanMode
 
     /**
-     * Required password strength multiplier. Bigger factor = more complex password required.
+     * This is a scale factor applied to the calculated password strength.
+     * It can be used to increase or decrease the strength of passwords required.
      */
     var strengthScaleFactor: Double
 
     /**
-     * Minimum password length.
+     * The minimum number of characters that the password must have in order to be valid.
      */
     var minimumChars: Int
 
