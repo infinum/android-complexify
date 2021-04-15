@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Complexify sample app</string>
+
+    <string name="minimum_complexity">0.0</string>
+    <string name="valid">Valid</string>
+    <string name="non_valid">Non valid</string>
+</resources>

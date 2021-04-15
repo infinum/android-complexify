@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'kotlin-android'
 }
 
@@ -7,27 +7,25 @@ android {
     compileSdkVersion buildConfig.compileSdk
 
     defaultConfig {
+        applicationId "com.infinum.complexify.sample"
         minSdkVersion buildConfig.minSdk
         targetSdkVersion buildConfig.targetSdk
         versionCode releaseConfig.versionCode
         versionName releaseConfig.versionName
     }
-
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
-    api project(':complexify-core')
+    implementation project(':complexify-android')
+    implementation packages.androidx.appcompat
+    implementation packages.kotlin.core
 }

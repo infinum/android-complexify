@@ -1,23 +1,21 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
+
+    apply from: "config.gradle"
+    apply from: "dependencies.gradle"
+
     repositories {
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-
-        // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath packages.gradle
+        classpath packages.kotlin.plugin
     }
 }
 
-allprojects {
+subprojects {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
 }
