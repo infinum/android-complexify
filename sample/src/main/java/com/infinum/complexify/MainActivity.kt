@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
+import com.infinum.complexify.configuration.DefaultConfiguration
 import com.infinum.complexify.databinding.ActivityMainBinding
 import com.infinum.complexify.ui.setComplexityListener
 
@@ -12,10 +13,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val complexify = Complexify(
-        ComplexifyBanMode.LOOSE,
-        0.5,
-        6,
-        arrayOf("123", "password")
+        configuration = DefaultConfiguration(
+            ComplexifyBanMode.LOOSE,
+            0.5,
+            6,
+            arrayOf("123", "password")
+        )
     )
 
     private val listener = ComplexityListener { isValid, complexity ->
