@@ -2,11 +2,13 @@ buildscript {
 
     apply from: "config.gradle"
     apply from: "dependencies.gradle"
+    apply from: "maven.gradle"
 
     repositories {
         google()
         jcenter()
     }
+
     dependencies {
         classpath packages.gradle
         classpath packages.kotlin.plugin
@@ -16,6 +18,9 @@ buildscript {
 subprojects {
     repositories {
         google()
+        jcenter()
         mavenCentral()
     }
 }
+
+apply from: "deploy.gradle"

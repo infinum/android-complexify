@@ -118,3 +118,6 @@ atlassian-ide-plugin.xml
 .gradle/
 build/
 bin/
+
+publish.properties
+*.gpg

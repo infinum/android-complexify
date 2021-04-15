@@ -1,20 +1,46 @@
-# android-complexify
+# Complexify
 
-Android port of Dan Palmers's [jquery.complexify.js](https://github.com/danpalmer/jquery.complexify.js/).
+A library which makes checking the quality of user's password a breeze.
 
-## Download
+Port of Dan Palmers's [jquery.complexify.js](https://github.com/danpalmer/jquery.complexify.js/).
 
-Use Gradle:
+Complexify's default settings will enforce a minimum level of complexity that would mean brute-forcing should take ~600 years on a commodity desktop machine. The 'perfect' password used to scale the complexity percentage would take 3x10^33 years. These are equivalent to a 12 character password with uppercase, lowercase and numbers included, and a 25 character password with uppercase, lowercase, numbers and a wide range of punctuation.
 
-```gradle
-repositories {
-    mavenCentral()
-}
+## Getting started
 
-dependencies {
-  implementation 'com.infinum:complexify:3.0.0'
+To include _Complexify_ in your project, you have to add buildscript dependencies in your project level `build.gradle` or `build.gradle.kts`:
+
+**Groovy**
+```groovy
+buildscript {
+    repositories {
+        mavenCentral()
+    }
 }
 ```
+**KotlinDSL**
+```kotlin
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+```
+
+Then add the following dependencies in your app `build.gradle` or `build.gradle.kts` :
+
+**Groovy**
+```groovy
+implementation "com.infinum:complexify-core:3.0.0"
+implementation "com.infinum:complexify-android:3.0.0"
+```
+**KotlinDSL**
+```kotlin
+implementation("com.infinum:complexify-core:3.0.0")
+implementation("com.infinum:complexify-android:3.0.0")
+```
+
+Note that the Android module is optional; it contains helper functions for easier usage in Android projects.
 
 ## Usage
 
