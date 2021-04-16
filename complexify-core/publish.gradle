@@ -3,7 +3,7 @@ apply plugin: "signing"
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set('sources')
-    from android.sourceSets.main.kotlin.srcDirs
+    from sourceSets.main.allSource
 }
 
 task javadocsJar(type: Jar, dependsOn: "dokkaJavadoc") {
@@ -30,7 +30,6 @@ afterEvaluate {
 
                 artifactId = "complexify-core"
 
-                artifact bundleReleaseAar
                 artifact sourcesJar
                 artifact javadocsJar
 
