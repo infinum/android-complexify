@@ -1,3 +1,5 @@
+![Maven Central](https://img.shields.io/maven-central/v/com.infinum.complexify/complexify-core) ![Maven Central](https://img.shields.io/maven-central/v/com.infinum.complexify/complexify-android)
+
 # Complexify
 
 A library which makes checking the quality of user's password a breeze.
@@ -27,20 +29,27 @@ buildscript {
 }
 ```
 
-Then add the following dependencies in your app `build.gradle` or `build.gradle.kts` :
+Then add one of the following dependencies in your app `build.gradle` or `build.gradle.kts` :
 
 **Groovy**
 ```groovy
 implementation "com.infinum:complexify-core:3.0.0"
-implementation "com.infinum:complexify-android:3.0.0"
+implementation "com.infinum:complexify-android:3.0.0" // can be used as a standalone dependency
 ```
 **KotlinDSL**
 ```kotlin
 implementation("com.infinum:complexify-core:3.0.0")
-implementation("com.infinum:complexify-android:3.0.0")
+implementation("com.infinum:complexify-android:3.0.0") // can be used as a standalone dependency
 ```
 
-Note that the Android module is optional; it contains helper functions for easier usage in Android projects.
+Note that the Android module is optional; it contains helper functions for easier usage in Android projects. If you add it as the dependency,
+complexify-core is _not_ required.
+
+## Requirements
+
+The library is written entirely in Kotlin. 
+The core library module (complexify-core) doesn't have any requirements. 
+Minimum API for the complexify-android module is 21.
 
 ## Usage
 
