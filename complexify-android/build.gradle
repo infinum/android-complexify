@@ -30,7 +30,7 @@ android {
 }
 
 dependencies {
-    api 'com.infinum.complexify:complexify-core:3.0.0-alpha01'
+    api "${releaseConfig.group}:complexify-core:${releaseConfig.versionName}"
 }
 
 apply from: "publish.gradle"
