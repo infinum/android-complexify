@@ -13,11 +13,3 @@ task deployComplexifyAndroid(dependsOn: [
     group = "Deploy"
     description = "Deploy module to repositories"
 }
-
-task deployAll(dependsOn: [
-        'deployComplexifyCore',
-        'deployComplexifyAndroid'
-]) {
-    group = "Deploy"
-    description = "Deploy all modules to repositories"
-}
