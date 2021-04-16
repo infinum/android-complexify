@@ -1,6 +1,5 @@
 package com.infinum.complexify.configuration
 
-import com.infinum.complexify.Complexify
 import com.infinum.complexify.ComplexifyBanMode
 import com.infinum.complexify.Constants.DEFAULT_BAN_LIST
 

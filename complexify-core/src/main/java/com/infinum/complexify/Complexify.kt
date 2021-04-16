@@ -1,10 +1,8 @@
 package com.infinum.complexify
 
-import android.content.res.Resources
-import com.infinum.android.R
-import com.infinum.complexify.ComplexifyBanMode.*
+import com.infinum.complexify.ComplexifyBanMode.LOOSE
+import com.infinum.complexify.ComplexifyBanMode.STRICT
 import com.infinum.complexify.Constants.CHARSETS_ARRAY
-import com.infinum.complexify.Constants.DEFAULT_BAN_LIST
 import com.infinum.complexify.configuration.Configuration
 import com.infinum.complexify.configuration.DefaultConfiguration
 import kotlin.math.ln
