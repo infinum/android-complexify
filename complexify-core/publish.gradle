@@ -1,7 +1,7 @@
 apply plugin: "maven-publish"
 apply plugin: "signing"
 
-task sourcesJar(type: Jar) {
+task sourcesJar(type: Jar, dependsOn: assemble) {
     archiveClassifier.set('sources')
     from sourceSets.main.allSource
 }
