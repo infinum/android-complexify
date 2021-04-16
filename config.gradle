@@ -6,7 +6,7 @@ ext {
     ]
     releaseConfig = [
         "group"      : "com.infinum.complexify",
-        "versionName": "3.0.0-alpha03",
+        "versionName": "3.0.0-alpha04",
         "versionCode": 3 * 100 * 100 + 0 * 100 + 0
     ]
 }

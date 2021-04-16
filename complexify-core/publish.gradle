@@ -25,6 +25,8 @@ afterEvaluate {
         }
         publications {
             release(MavenPublication) {
+                from components.java
+
                 groupId = releaseConfig.group
                 version = releaseConfig.versionName
 
