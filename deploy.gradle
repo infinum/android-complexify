@@ -1,0 +1,15 @@
+task deployComplexifyCore(dependsOn: [
+        ':complexify-core:clean',
+        ':complexify-core:publishReleasePublicationToSonatypeRepository'
+]) {
+    group = "Deploy"
+    description = "Deploy module to repositories"
+}
+
+task deployComplexifyAndroid(dependsOn: [
+    ':complexify-android:clean',
+    ':complexify-android:publishReleasePublicationToSonatypeRepository'
+]) {
+    group = "Deploy"
+    description = "Deploy module to repositories"
+}

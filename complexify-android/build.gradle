@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'org.jetbrains.dokka' version '1.4.30'
 }
 
 android {
@@ -29,5 +30,7 @@ android {
 }
 
 dependencies {
-    api project(':complexify-core')
+    api "${releaseConfig.group}:complexify-core:${releaseConfig.versionName}"
 }
+
+apply from: "publish.gradle"

@@ -1,20 +1,55 @@
-# android-complexify
+![Maven Central](https://img.shields.io/maven-central/v/com.infinum.complexify/complexify-core) ![Maven Central](https://img.shields.io/maven-central/v/com.infinum.complexify/complexify-android)
 
-Android port of Dan Palmers's [jquery.complexify.js](https://github.com/danpalmer/jquery.complexify.js/).
+# Complexify
 
-## Download
+A library which makes checking the quality of user's password a breeze.
 
-Use Gradle:
+Port of Dan Palmers's [jquery.complexify.js](https://github.com/danpalmer/jquery.complexify.js/).
 
-```gradle
-repositories {
-    mavenCentral()
-}
+Complexify's default settings will enforce a minimum level of complexity that would mean brute-forcing should take ~600 years on a commodity desktop machine. The 'perfect' password used to scale the complexity percentage would take 3x10^33 years. These are equivalent to a 12 character password with uppercase, lowercase and numbers included, and a 25 character password with uppercase, lowercase, numbers and a wide range of punctuation.
 
-dependencies {
-  implementation 'com.infinum:complexify:3.0.0'
+## Getting started
+
+To include _Complexify_ in your project, you have to add buildscript dependencies in your project level `build.gradle` or `build.gradle.kts`:
+
+**Groovy**
+```groovy
+buildscript {
+    repositories {
+        mavenCentral()
+    }
 }
 ```
+**KotlinDSL**
+```kotlin
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+```
+
+Then add one of the following dependencies in your app `build.gradle` or `build.gradle.kts` :
+
+**Groovy**
+```groovy
+implementation "com.infinum:complexify-core:3.0.0"
+implementation "com.infinum:complexify-android:3.0.0" // can be used as a standalone dependency
+```
+**KotlinDSL**
+```kotlin
+implementation("com.infinum:complexify-core:3.0.0")
+implementation("com.infinum:complexify-android:3.0.0") // can be used as a standalone dependency
+```
+
+Note that the Android module is optional; it contains helper functions for easier usage in Android projects. If you add it as the dependency,
+complexify-core is _not_ required.
+
+## Requirements
+
+The library is written entirely in Kotlin. 
+The core library module (complexify-core) doesn't have any requirements. 
+Minimum API for the complexify-android module is 21.
 
 ## Usage
 

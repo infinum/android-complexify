@@ -1,1 +1,5 @@
-include ':sample', ':complexify-core', ':complexify-android'
+rootProject.name="Complexify"
+
+include ':complexify-core'
+include ':complexify-android'
+include ':sample'
