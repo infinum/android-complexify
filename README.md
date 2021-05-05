@@ -1,5 +1,6 @@
 ![Maven Central](https://img.shields.io/maven-central/v/com.infinum.complexify/complexify-core) ![Maven Central](https://img.shields.io/maven-central/v/com.infinum.complexify/complexify-android)
 
+### <img align="left" src="logo.svg" width="48">
 # Complexify
 
 A library which makes checking the quality of user's password a breeze.
