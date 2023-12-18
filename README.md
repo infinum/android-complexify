@@ -1,3 +1,6 @@
+# Deprecated
+This library is no longer supported and will not receive any more updates.
+
 # android-complexify
 
 Android port of Dan Palmers's [jquery.complexify.js](https://github.com/danpalmer/jquery.complexify.js/).
